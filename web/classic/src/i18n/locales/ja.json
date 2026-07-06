@@ -4743,6 +4743,12 @@
     "文件大小": "",
     "暂无导出任务": "",
     "下载": "",
-    "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first."
+    "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.",
+    "邮件发送方式": "メール送信方式",
+    "Cloudflare 邮件 API": "Cloudflare メール API",
+    "Cloudflare 邮件 API 通过 HTTPS 发送，邮件头中不会出现本服务器 IP": "Cloudflare メール API は HTTPS 経由で送信し、メールヘッダーにこのサーバーの IP は含まれません",
+    "开通了 Email Sending 服务的账户 ID": "Email Sending サービスが有効なアカウント ID",
+    "Cloudflare 发件地址": "Cloudflare 送信元アドレス",
+    "须为 Cloudflare 已验证发信域名下的地址，留空时使用 SMTP 发送者邮箱": "Cloudflare で検証済みの送信ドメインのアドレスが必要です。空欄の場合は SMTP 送信者アドレスを使用します"
   }
 }

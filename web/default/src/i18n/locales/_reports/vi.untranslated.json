@@ -1,5 +1,15 @@
 {
   "Base input and output token prices for this tier.": "Base input and output token prices for this tier.",
   "Each tier supports up to 2 conditions. The last tier without conditions is the fallback.": "Each tier supports up to 2 conditions. The last tier without conditions is the fallback.",
-  "Set separate prices for cache reads and writes.": "Set separate prices for cache reads and writes."
+  "If an error message contains any whitelist keyword, the channel will NOT be auto-disabled, even if it matches a failure keyword. Whitelist has higher priority.": "If an error message contains any whitelist keyword, the channel will NOT be auto-disabled, even if it matches a failure keyword. Whitelist has higher priority.",
+  "Hide blocked models from pricing page and model lists for restricted groups": "Hide blocked models from pricing page and model lists for restricted groups",
+  "JSON map of group names to blocked model patterns. Example: {\"default\": [\"o1-*\"], \"vip\": [\"dall-e-*\"]}": "JSON map of group names to blocked model patterns. Example: {\"default\": [\"o1-*\"], \"vip\": [\"dall-e-*\"]}",
+  "Hours before invite registration rewards become transferable. Set to 0 to disable cooldown.": "Hours before invite registration rewards become transferable. Set to 0 to disable cooldown.",
+  "Hours before top-up commissions become transferable. Set to 0 to disable cooldown.": "Hours before top-up commissions become transferable. Set to 0 to disable cooldown.",
+  "Minimum amount required to submit an invoice request; 0 means no limit": "Minimum amount required to submit an invoice request; 0 means no limit",
+  "Models listed here will be hidden from the pricing page but can still be used via API.": "Models listed here will be hidden from the pricing page but can still be used via API.",
+  "JSON map of country codes to blocked group patterns. Groups in the blacklist will be completely unavailable in that region.": "JSON map of country codes to blocked group patterns. Groups in the blacklist will be completely unavailable in that region.",
+  "Set separate prices for cache reads and writes.": "Set separate prices for cache reads and writes.",
+  "When enabled, strips inherited upstream (request id: ...) from error responses and keeps only this gateway's own request ID. request_ori_id and traceid are untouched.": "When enabled, strips inherited upstream (request id: ...) from error responses and keeps only this gateway's own request ID. request_ori_id and traceid are untouched.",
+  "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first."
 }

@@ -273,6 +273,10 @@ export type OperationsSettings = {
   SMTPToken: string
   SMTPSSLEnabled: boolean
   SMTPForceAuthLogin: boolean
+  EmailSendMethod: string
+  CloudflareEmailAccountId: string
+  CloudflareEmailAPIToken: string
+  CloudflareEmailFrom: string
   WorkerUrl: string
   WorkerValidKey: string
   WorkerAllowHttpImageRequestEnabled: boolean

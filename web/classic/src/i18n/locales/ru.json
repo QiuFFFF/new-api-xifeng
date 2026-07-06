@@ -4797,6 +4797,12 @@
     "文件大小": "",
     "暂无导出任务": "",
     "下载": "",
-    "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first."
+    "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.",
+    "邮件发送方式": "Способ отправки почты",
+    "Cloudflare 邮件 API": "Cloudflare Email API",
+    "Cloudflare 邮件 API 通过 HTTPS 发送，邮件头中不会出现本服务器 IP": "Cloudflare Email API отправляет по HTTPS; в заголовках письма не будет IP этого сервера",
+    "开通了 Email Sending 服务的账户 ID": "ID аккаунта с подключённым сервисом Email Sending",
+    "Cloudflare 发件地址": "Адрес отправителя Cloudflare",
+    "须为 Cloudflare 已验证发信域名下的地址，留空时使用 SMTP 发送者邮箱": "Должен принадлежать подтверждённому домену отправки Cloudflare; если пусто, используется адрес отправителя SMTP"
   }
 }

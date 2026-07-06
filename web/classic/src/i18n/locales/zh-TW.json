@@ -4768,6 +4768,12 @@
     "文件大小": "檔案大小",
     "暂无导出任务": "暫無導出任務",
     "下载": "下載",
-    "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "餘額不足時每自然週僅可新建一次工單/開票申請，本週已用完。如需協助，請先聯絡客服諮詢。"
+    "You've used this week's limit for creating tickets / invoice requests on a low balance. If you need help, please contact support first.": "餘額不足時每自然週僅可新建一次工單/開票申請，本週已用完。如需協助，請先聯絡客服諮詢。",
+    "邮件发送方式": "郵件傳送方式",
+    "Cloudflare 邮件 API": "Cloudflare 郵件 API",
+    "Cloudflare 邮件 API 通过 HTTPS 发送，邮件头中不会出现本服务器 IP": "Cloudflare 郵件 API 透過 HTTPS 傳送，郵件標頭中不會出現本伺服器 IP",
+    "开通了 Email Sending 服务的账户 ID": "已開通 Email Sending 服務的帳戶 ID",
+    "Cloudflare 发件地址": "Cloudflare 寄件地址",
+    "须为 Cloudflare 已验证发信域名下的地址，留空时使用 SMTP 发送者邮箱": "須為 Cloudflare 已驗證寄信網域下的地址，留空時使用 SMTP 寄件者信箱"
   }
 }

@@ -63,6 +63,11 @@ const OPERATIONS_SECTIONS = [
           SMTPToken: settings.SMTPToken,
           SMTPSSLEnabled: settings.SMTPSSLEnabled,
           SMTPForceAuthLogin: settings.SMTPForceAuthLogin,
+          EmailSendMethod:
+            settings.EmailSendMethod === 'cloudflare' ? 'cloudflare' : 'smtp',
+          CloudflareEmailAccountId: settings.CloudflareEmailAccountId,
+          CloudflareEmailAPIToken: settings.CloudflareEmailAPIToken,
+          CloudflareEmailFrom: settings.CloudflareEmailFrom,
         }}
       />
     ),
