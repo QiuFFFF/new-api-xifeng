@@ -97,6 +97,68 @@ func TestGetCompletionRatio_Context1mSuffixResolvesBase(t *testing.T) {
 	}
 }
 
+func TestGPT56DefaultModelRatios(t *testing.T) {
+	wants := map[string]float64{
+		"gpt-5.5":       2.5,
+		"gpt-5.6-sol":   2.5,
+		"gpt-5.6-terra": 1.25,
+		"gpt-5.6-luna":  0.5,
+	}
+
+	defaults := GetDefaultModelRatioMap()
+	for name, want := range wants {
+		if got := defaults[name]; got != want {
+			t.Errorf("default model ratio for %q = %v, want %v", name, got, want)
+		}
+	}
+}
+
+func TestGPT5CompletionRatioLocking(t *testing.T) {
+	oldCompletionRatio := CompletionRatio2JSONString()
+	t.Cleanup(func() {
+		if err := UpdateCompletionRatioByJSONString(oldCompletionRatio); err != nil {
+			t.Errorf("restore completion ratio map: %v", err)
+		}
+	})
+
+	configured := map[string]float64{
+		"gpt-5":       3,
+		"gpt-5.4":     3,
+		"gpt-5.5":     7,
+		"gpt-5.6-sol": 4,
+	}
+	if err := UpdateCompletionRatioByJSONString(mustRatioJSONString(t, configured)); err != nil {
+		t.Fatalf("UpdateCompletionRatioByJSONString failed: %v", err)
+	}
+
+	tests := []struct {
+		name       string
+		wantRatio  float64
+		wantLocked bool
+	}{
+		{name: "gpt-5", wantRatio: 8, wantLocked: true},
+		{name: "gpt-5-mini", wantRatio: 8, wantLocked: true},
+		{name: "gpt-5.4", wantRatio: 6, wantLocked: true},
+		{name: "gpt-5.4-nano", wantRatio: 6.25, wantLocked: true},
+		{name: "gpt-5.5", wantRatio: 7, wantLocked: false},
+		{name: "gpt-5.6-sol", wantRatio: 4, wantLocked: false},
+		{name: "gpt-5.6-terra", wantRatio: 6, wantLocked: false},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := GetCompletionRatio(tt.name); got != tt.wantRatio {
+				t.Errorf("GetCompletionRatio(%q) = %v, want %v", tt.name, got, tt.wantRatio)
+			}
+
+			info := GetCompletionRatioInfo(tt.name)
+			if info.Ratio != tt.wantRatio || info.Locked != tt.wantLocked {
+				t.Errorf("GetCompletionRatioInfo(%q) = %+v, want ratio %v locked %v", tt.name, info, tt.wantRatio, tt.wantLocked)
+			}
+		})
+	}
+}
+
 func TestGetModelPrice_Context1mSuffixResolvesBase(t *testing.T) {
 	oldModelPrice := ModelPrice2JSONString()
 	t.Cleanup(func() {
