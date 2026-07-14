@@ -80,6 +80,9 @@ export function GroupMonitoringSettingsSection({ settings }: Props) {
   const [cacheSeparateGroups, setCacheSeparateGroups] = useState<string[]>(() =>
     parseArr(getVal(settings, 'cache_tokens_separate_groups'))
   )
+  const [frtExcludeThreshold, setFrtExcludeThreshold] = useState(
+    getVal(settings, 'frt_exclude_threshold_seconds') || '0'
+  )
 
   const [saving, setSaving] = useState(false)
   const [refreshing, setRefreshing] = useState(false)
@@ -129,6 +132,10 @@ export function GroupMonitoringSettingsSection({ settings }: Props) {
         {
           key: PREFIX + 'cache_tokens_separate_groups',
           value: JSON.stringify(cacheSeparateGroups),
+        },
+        {
+          key: PREFIX + 'frt_exclude_threshold_seconds',
+          value: frtExcludeThreshold,
         },
       ]
       for (const u of updates) {
@@ -194,6 +201,18 @@ export function GroupMonitoringSettingsSection({ settings }: Props) {
               value={aggregationInterval}
               onChange={(e) => setAggregationInterval(e.target.value)}
             />
+          </div>
+          <div className='space-y-1'>
+            <Label>{t('FRT Exclude Threshold (sec)')}</Label>
+            <Input
+              type='number'
+              min={0}
+              value={frtExcludeThreshold}
+              onChange={(e) => setFrtExcludeThreshold(e.target.value)}
+            />
+            <p className='text-xs text-muted-foreground'>
+              {t('Requests with first response time above this are excluded from all stats, 0 to disable')}
+            </p>
           </div>
         </div>
 

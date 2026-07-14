@@ -16,6 +16,8 @@ type GroupMonitoringSetting struct {
 	GroupDisplayOrder              []string `json:"group_display_order"`
 	AggregationIntervalMinutes     int      `json:"aggregation_interval_minutes"`
 	CacheTokensSeparateGroups      []string `json:"cache_tokens_separate_groups"`
+	// 首字响应时间超过该秒数的请求不参与所有监控统计（可用率/缓存命中/响应时间/首字），0 表示不启用
+	FRTExcludeThresholdSeconds float64 `json:"frt_exclude_threshold_seconds"`
 }
 
 var groupMonitoringSetting = GroupMonitoringSetting{
@@ -30,6 +32,7 @@ var groupMonitoringSetting = GroupMonitoringSetting{
 	GroupDisplayOrder:              []string{},
 	AggregationIntervalMinutes:     5,
 	CacheTokensSeparateGroups:      []string{},
+	FRTExcludeThresholdSeconds:     0,
 }
 
 func init() {

@@ -420,6 +420,9 @@ const zh: Record<string, string> = {
   'Exclude Models (Cache Hit)': '排除模型（缓存命中）',
   'Exclude Status Codes': '排除状态码',
   'Cache Tokens Separate Groups': '缓存令牌分组',
+  'FRT Exclude Threshold (sec)': '首字排除阈值（秒）',
+  'Requests with first response time above this are excluded from all stats, 0 to disable':
+    '首字时间超过该秒数的请求不参与所有统计，0 表示不启用',
   'Operation failed': '操作失败',
 
   // Common

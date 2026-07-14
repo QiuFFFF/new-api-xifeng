@@ -4769,6 +4769,8 @@
     "风控配置已保存": "",
     "风险主体": "",
     "风险规则和异常主体": "",
+    "首字时间超过该秒数的请求不参与所有统计，0 表示不启用": "Requests with first response time above this are excluded from all stats, 0 to disable",
+    "首字排除阈值": "FRT Exclude Threshold",
     "首尾生视频": "Head-tail generated video",
     "首页": "Home",
     "首页内容": "Home Page Content",

@@ -409,6 +409,9 @@ const en = {
   'Exclude Models (Cache Hit)': 'Exclude Models (Cache Hit)',
   'Exclude Status Codes': 'Exclude Status Codes',
   'Cache Tokens Separate Groups': 'Cache Tokens Separate Groups',
+  'FRT Exclude Threshold (sec)': 'FRT Exclude Threshold (sec)',
+  'Requests with first response time above this are excluded from all stats, 0 to disable':
+    'Requests with first response time above this are excluded from all stats, 0 to disable',
   'Operation failed': 'Operation failed',
 
   // Common
